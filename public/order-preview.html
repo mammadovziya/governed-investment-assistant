@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Order ticket review · Invest Assistant</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="order-review-page">
+    <main class="order-review-shell">
+      <div class="order-review-toolbar">
+        <a class="order-review-back" href="/" data-order-i18n="back">← Back to assistant</a>
+        <div class="locale-switcher" id="order-locale-selector" role="group" aria-label="Language">
+          <button type="button" data-locale="en-US" lang="en" aria-pressed="true" aria-label="Use English">EN</button>
+          <button type="button" data-locale="az-AZ" lang="az" aria-pressed="false" aria-label="Azərbaycan dilini seç">AZ</button>
+        </div>
+      </div>
+      <section class="order-review-card" aria-labelledby="order-review-title">
+        <p class="order-review-eyebrow" data-order-i18n="eyebrow">READ-ONLY INTERNAL PILOT</p>
+        <h1 id="order-review-title" data-order-i18n="title">Order ticket review</h1>
+        <p id="order-review-status" role="status" aria-live="polite" data-order-i18n="loading">
+          Loading the verified handoff…
+        </p>
+
+        <div id="order-review-content" hidden>
+          <dl class="order-review-details">
+            <div><dt data-order-i18n="instrument">Instrument</dt><dd id="order-review-symbol">—</dd></div>
+            <div><dt data-order-i18n="side">Side</dt><dd id="order-review-side">—</dd></div>
+            <div><dt data-order-i18n="amount">Requested amount</dt><dd id="order-review-notional">—</dd></div>
+            <div><dt data-order-i18n="expires">Handoff expires</dt><dd id="order-review-expiry">—</dd></div>
+          </dl>
+
+          <h2 data-order-i18n="required">Required before a real order</h2>
+          <ul id="order-review-checks" class="order-review-checks"></ul>
+
+          <p class="order-review-warning" data-order-i18n="warning">
+            The external product order screen is not integrated. This pilot has
+            verified and consumed the one-use handoff, but it cannot submit an order.
+          </p>
+          <button type="button" disabled data-order-i18n="submissionUnavailable">Order submission unavailable</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/order-preview.js"></script>
+  </body>
+</html>

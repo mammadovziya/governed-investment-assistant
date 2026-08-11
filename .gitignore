@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+tmp/
+test-results/
+playwright-report/
+blob-report/
+artifacts/container/
+# Historical UI captures include downstream branding and live-feed snapshots.
+# Keep them local unless they are regenerated and rights-reviewed for release.
+artifacts/audit-nvda/
+artifacts/intc-*.png
+# Keep local multi-agent/model evaluation transcripts out of public releases.
+docs/real-user-llm-evaluation-*.md
+*.log
+*.swp
+.mastra-storage*.db*
+.mastra-observability*.duckdb*
+.knowledge-vector.db*
+.assistant-v3-audit.jsonl
+.mastra/

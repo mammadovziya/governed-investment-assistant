@@ -1,0 +1,40 @@
+services:
+  assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    environment:
+      NODE_ENV: development
+      ASSISTANT_RELEASE_TARGET: internal-pilot
+      ASSISTANT_PRODUCT_PROFILE: demo-invest
+      ASSISTANT_DEMO_MARKET_PROVIDER: synthetic-offline
+      ASSISTANT_METRICS_PREFIX: investment_assistant
+      PORT: "3000"
+      MASTRA_STORAGE_URL: file:/data/mastra.db
+      MASTRA_OBSERVABILITY_SHARED: "false"
+      MASTRA_OBSERVABILITY_PATH: /data/observability-app.duckdb
+      KNOWLEDGE_VECTOR_URL: file:/data/knowledge-vector.db
+      ASSISTANT_AUDIT_OUTBOX_PATH: /data/assistant-audit.jsonl
+      KNOWLEDGE_INDEX_NAME: demo_invest_knowledge_2026_07_29_v1
+      KNOWLEDGE_INDEX_GENERATION: demo-invest-2026-07-29-v1
+      KNOWLEDGE_APPROVAL_MODE: official-publication
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Export OPENAI_API_KEY before starting the pilot}
+      OPENAI_MODEL: gpt-4o
+      OPENAI_ESCALATION_MODEL: gpt-4.1
+      ASSISTANT_INTERNAL_DIAGNOSTICS_TOKEN: ${ASSISTANT_INTERNAL_DIAGNOSTICS_TOKEN:-}
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - assistant-pilot-data:/data
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  assistant-pilot-data:

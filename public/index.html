@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      id="page-description"
+      name="description"
+      content="Open-source, tool-grounded AI investment assistant reference implementation with portfolio analytics, signed evidence, and observable Mastra workflows."
+    />
+    <meta name="application-name" content="Invest Assistant" />
+    <meta name="theme-color" content="#10281f" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Invest Assistant" />
+    <meta
+      property="og:description"
+      content="A bilingual, tool-grounded investment assistant reference implementation."
+    />
+    <title>Invest Assistant — Open-source reference demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Invest Assistant home" data-i18n-aria-label="brandHome">
+          <span class="brand-mark" id="brand-mark" aria-hidden="true">IA</span>
+          <span>
+            <strong id="brand-name">Invest Assistant</strong>
+            <small id="brand-product">Demo Invest demo</small>
+          </span>
+        </a>
+        <div class="topbar-actions">
+          <div class="locale-switcher" id="locale-selector" role="group" aria-label="Language">
+            <button type="button" data-locale="en-US" lang="en" aria-pressed="true" aria-label="Use English">EN</button>
+            <button type="button" data-locale="az-AZ" lang="az" aria-pressed="false" aria-label="Azərbaycan dilini seç">AZ</button>
+          </div>
+          <span class="demo-badge"><span></span><span data-i18n="mockClient">Mock client</span></span>
+          <button class="icon-button" id="refresh-button" type="button" aria-label="Refresh market data" data-i18n-aria-label="refreshMarket">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7" />
+            </svg>
+          </button>
+          <div class="avatar" id="client-avatar">DI</div>
+        </div>
+      </header>
+
+      <main>
+        <section class="intro-row">
+          <div>
+            <p class="eyebrow" data-i18n="portfolioIntelligence">Portfolio intelligence</p>
+            <h1><span data-i18n="greeting">Good evening,</span> <span id="client-name">Demo Investor</span>.</h1>
+            <p data-i18n="intro">Understand your portfolio with the available market context.</p>
+          </div>
+          <div class="market-clock">
+            <span class="pulse"></span>
+            <div>
+              <strong id="market-label" data-i18n="loadingMarket">Loading market data</strong>
+              <small id="market-time" data-i18n="checkingSnapshots">Checking latest snapshots…</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-grid" aria-label="Portfolio dashboard" data-i18n-aria-label="portfolioDashboard">
+          <article class="summary-card dark-card">
+            <div class="card-heading">
+              <div>
+                <p data-i18n="coveredValue">Covered portfolio value</p>
+                <h2 id="portfolio-value">—</h2>
+              </div>
+              <span class="coverage-pill" id="coverage-pill" data-i18n="loading">Loading</span>
+            </div>
+            <div class="performance-row">
+              <div>
+                <span data-i18n="unrealizedPnl">Unrealized P&amp;L</span>
+                <strong id="total-pnl">—</strong>
+              </div>
+              <div>
+                <span data-i18n="today">Today</span>
+                <strong id="day-change">—</strong>
+              </div>
+              <div>
+                <span data-i18n="cash">Cash</span>
+                <strong id="cash-value">—</strong>
+              </div>
+            </div>
+            <p class="data-notice" id="portfolio-notice" data-i18n="portfolioNotice">Mock holdings · Informational prices</p>
+          </article>
+
+          <article class="allocation-card surface-card">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow" data-i18n="composition">Composition</p>
+                <h2 data-i18n="allocation">Allocation</h2>
+              </div>
+              <span class="as-of" id="allocation-as-of">—</span>
+            </div>
+            <div class="allocation-body">
+              <div class="donut" id="allocation-donut" aria-label="Portfolio allocation chart" data-i18n-aria-label="allocationChart">
+                <div><strong id="positions-share">—</strong><span data-i18n="invested">invested</span></div>
+              </div>
+              <div class="allocation-legend" id="allocation-legend">
+                <p class="skeleton-line"></p>
+                <p class="skeleton-line short"></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="watchlist-card surface-card">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow" data-i18n="currentSnapshots">Current snapshots</p>
+                <h2 data-i18n="marketWatch">Market watch</h2>
+              </div>
+              <button class="text-button" id="market-refresh" type="button" data-i18n="refresh">Refresh</button>
+            </div>
+            <div class="watchlist" id="watchlist" aria-live="polite">
+              <div class="watchlist-skeleton"></div>
+              <div class="watchlist-skeleton"></div>
+              <div class="watchlist-skeleton"></div>
+            </div>
+          </article>
+
+          <article class="holdings-card surface-card">
+            <div class="card-title-row">
+              <div>
+                <p class="eyebrow" data-i18n="mockAccount">Mock account</p>
+                <h2 data-i18n="holdings">Holdings</h2>
+              </div>
+              <span class="small-label" id="holding-count">—</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th data-i18n="instrument">Instrument</th>
+                    <th data-i18n="quantity">Quantity</th>
+                    <th data-i18n="marketValue">Market value</th>
+                    <th data-i18n="unrealizedPnl">Unrealized P&amp;L</th>
+                    <th data-i18n="weight">Weight</th>
+                  </tr>
+                </thead>
+                <tbody id="holdings-body">
+                  <tr><td colspan="5" class="loading-cell" data-i18n="loadingSnapshots">Loading current snapshots…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="assistant-card" aria-label="Invest assistant" data-i18n-aria-label="assistantTitle">
+            <div class="assistant-header">
+              <div class="assistant-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3l1.45 4.55L18 9l-4.55 1.45L12 15l-1.45-4.55L6 9l4.55-1.45L12 3Z" />
+                  <path d="M18.5 14l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z" />
+                </svg>
+              </div>
+              <div>
+                <h2 data-i18n="assistantTitle">Invest assistant</h2>
+                <p><span class="status-dot"></span><span id="assistant-mode" data-i18n="connecting">Connecting securely…</span></p>
+              </div>
+            </div>
+
+            <div
+              class="messages"
+              id="messages"
+              role="log"
+              aria-label="Assistant conversation"
+              data-i18n-aria-label="conversation"
+              aria-live="polite"
+              aria-relevant="additions text"
+            >
+              <div class="message assistant-message" id="welcome-message">
+                <p data-i18n="welcome">Hi — ask me about your portfolio, a company, product fees, or a read-only order preview.</p>
+                <span data-i18n="welcomeMeta">Signed V3 evidence · mock client portfolio</span>
+              </div>
+            </div>
+
+            <div class="suggestions" id="suggestions" aria-label="Suggested questions" data-i18n-aria-label="suggestedQuestions">
+              <button type="button" data-suggestion-index="0" data-prompt="What is my current portfolio value?">Portfolio value</button>
+              <button type="button" data-suggestion-index="1" data-prompt="Imagine my portfolio is 60% NVDA, 20% AAPL, 20% cash. Analyze my allocation.">Hypothetical allocation</button>
+              <button type="button" data-suggestion-index="2" data-prompt="Assume I own 15 shares of NVDA bought at $170 each. Should I buy more, hold, or sell?">NVDA cost-basis view</button>
+              <button type="button" data-suggestion-index="3" data-prompt="Should I sell my AAPL shares?">AAPL decision factors</button>
+              <button type="button" data-suggestion-index="4" data-prompt="Compare VOO and QQQ, including their main differences and risks.">Compare ETFs</button>
+              <button type="button" data-suggestion-index="5" data-prompt="Open a $100 AAPL buy ticket">Preview AAPL ticket</button>
+            </div>
+
+            <form class="chat-form" id="chat-form">
+              <label class="sr-only" for="message-input" data-i18n="messageLabel">Ask for portfolio analysis, market research, or a read-only preview</label>
+              <textarea
+                id="message-input"
+                name="message"
+                rows="1"
+                maxlength="2000"
+                autocomplete="off"
+                enterkeyhint="send"
+                aria-describedby="assistant-disclaimer"
+                placeholder="Ask for live research or portfolio insight…"
+                data-i18n-placeholder="messagePlaceholder"
+                disabled
+              ></textarea>
+              <button type="submit" aria-label="Send message" data-i18n-aria-label="sendMessage" disabled>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </button>
+            </form>
+            <p class="assistant-disclaimer" id="assistant-disclaimer" data-i18n="disclaimer">Informational only. Order cards open a separate review screen and never submit a trade. Client data is mock.</p>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

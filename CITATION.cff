@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software in research or teaching, please cite it using this metadata."
+title: "Governed Investment Assistant"
+type: software
+authors:
+  - name: "Ziya"
+version: 0.1.0
+date-released: 2026-08-11
+license: Apache-2.0
+repository-code: "https://github.com/mammadovziya/governed-investment-assistant"
+abstract: "A bilingual, evidence-grounded investment-assistant reference implementation built with Mastra and deterministic financial safety controls."
+keywords:
+  - artificial-intelligence
+  - fintech
+  - investment-assistant
+  - mastra
+  - retrieval-augmented-generation
+  - TypeScript

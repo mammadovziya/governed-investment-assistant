@@ -1,0 +1,92 @@
+name: Bug report
+description: Report a reproducible defect in the application, tooling, or documentation.
+title: "[Bug]: "
+labels:
+  - bug
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the project. Do not include secrets, real customer data, account details, raw private traces, or security vulnerabilities. Report security issues privately using SECURITY.md.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This report contains only public, approved, or synthetic data.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the defect and its impact.
+      placeholder: A concise description of the observed behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: List the smallest sequence of commands or actions that reproduces the issue.
+      placeholder: |
+        1. Install with ...
+        2. Start ...
+        3. Send the synthetic request ...
+        4. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Assistant routing or planning
+        - Tool or evidence pipeline
+        - Portfolio analytics
+        - Approved knowledge or education
+        - Policy, scoring, or safety
+        - API or runtime
+        - Mastra Studio or observability
+        - User interface or accessibility
+        - Build, container, or CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Provide the release version or commit SHA.
+      placeholder: "0.1.0 or abc1234"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include operating system, Node.js version, browser if relevant, and local or container mode.
+      placeholder: "macOS 15, Node.js 22.x, local"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized diagnostics
+      description: Add bounded logs, screenshots, or traces after removing identifiers, prompts, model output, credentials, and financial data.
+      render: shell
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context

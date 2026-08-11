@@ -1,0 +1,91 @@
+{
+  "name": "governed-investment-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Open-source bilingual AI investment assistant reference implementation with tool-grounded portfolio analytics, signed evidence, Mastra workflows, and model cost observability.",
+  "keywords": [
+    "ai-finance",
+    "agentic-ai",
+    "azerbaijani",
+    "bilingual-ai",
+    "duckdb",
+    "financial-assistant",
+    "fintech",
+    "investment-assistant",
+    "llm-observability",
+    "mastra",
+    "openai-responses-api",
+    "portfolio-analytics",
+    "prometheus",
+    "rag",
+    "signed-evidence",
+    "tool-calling",
+    "typescript"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mammadovziya/governed-investment-assistant.git"
+  },
+  "homepage": "https://github.com/mammadovziya/governed-investment-assistant#readme",
+  "bugs": {
+    "url": "https://github.com/mammadovziya/governed-investment-assistant/issues"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "studio": "umask 077 && ASSISTANT_PRIVATE_STUDIO_LAUNCH=local-loopback HOST=127.0.0.1 MASTRA_AUTO_DETECT_URL=true mastra dev --dir src/assistant-v3",
+    "start": "tsx src/server.ts",
+    "start:built": "node --enable-source-maps dist/server.js",
+    "knowledge:ingest": "umask 077 && tsx scripts/ingest-knowledge.ts",
+    "build": "node scripts/prepare-production-dist.mjs && tsc -p tsconfig.build.json && node scripts/verify-production-dist.mjs",
+    "postinstall": "node scripts/patch-mastra-studio-serve-handler.mjs",
+    "verify:studio-deps": "node scripts/patch-mastra-studio-serve-handler.mjs",
+    "security:scan": "node scripts/scan-repository-secrets.mjs",
+    "security:audit": "npm audit --omit=dev --audit-level=moderate",
+    "license:verify": "node scripts/verify-dependency-licenses.mjs",
+    "docs:verify": "node scripts/verify-markdown-links.mjs",
+    "open-source:verify": "node scripts/verify-open-source-readiness.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:a11y": "playwright test --grep @a11y",
+    "eval:ollama-writer": "tsx scripts/evaluate-local-writer.ts",
+    "check": "npm run typecheck && npm test",
+    "release:verify": "npm run check && npm run build && npm run security:scan && npm run security:audit && npm run license:verify && npm run docs:verify && npm run open-source:verify"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "4.0.18",
+    "@mastra/core": "^1.53.0",
+    "@mastra/duckdb": "1.5.1",
+    "@mastra/libsql": "^1.17.1",
+    "@mastra/loggers": "1.2.0",
+    "@mastra/observability": "1.16.2",
+    "@mastra/rag": "2.4.2",
+    "dotenv": "17.4.2",
+    "express": "5.2.1",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@mastra/editor": "0.13.8",
+    "@mastra/memory": "1.23.1",
+    "@playwright/test": "1.62.0",
+    "@types/express": "5.0.6",
+    "@types/node": "26.1.1",
+    "mastra": "^1.20.2",
+    "tsx": "4.23.1",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  },
+  "overrides": {
+    "@hono/node-server": "2.0.11",
+    "minimatch": {
+      ".": "10.2.5",
+      "brace-expansion": "5.0.9"
+    }
+  }
+}

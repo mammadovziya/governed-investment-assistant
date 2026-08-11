@@ -1,0 +1,70 @@
+name: Feature request
+description: Propose a focused, safe improvement to the open-source project.
+title: "[Feature]: "
+labels:
+  - enhancement
+  - triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Explain the user problem before proposing an implementation. This project is read-only, evidence-grounded, bilingual, and not approved for customer production.
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched existing issues and did not find the same proposal.
+          required: true
+        - label: The proposal does not require real customer data or order execution.
+          required: true
+        - label: I have considered the Azerbaijani and English user experience.
+          required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or contributor problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior without prescribing an architecture.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Assistant capability
+        - Evidence source or adapter
+        - Portfolio analytics
+        - Approved knowledge or education
+        - Policy, scoring, or safety
+        - API or integration
+        - Mastra Studio or observability
+        - User interface or accessibility
+        - Developer experience
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and examples
+      description: Add synthetic examples, links to public standards, or other evidence that clarifies the need.
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Trust-boundary considerations
+      description: Note effects on privacy, authorization, tools, evidence, scoring, audit, storage, model policy, or order isolation.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

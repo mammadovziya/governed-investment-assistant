@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+  <title id="title">Governed Investment Assistant</title>
+  <desc id="description">Open-source bilingual, tool-grounded financial assistant with governed evidence and observability.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07120f"/>
+      <stop offset="0.58" stop-color="#10251d"/>
+      <stop offset="1" stop-color="#132e24"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.24" cy="0.18" r="0.72">
+      <stop offset="0" stop-color="#4ade80" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#4ade80" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" rx="32" fill="url(#background)"/>
+  <rect width="1280" height="640" rx="32" fill="url(#glow)"/>
+  <path d="M0 520 C260 430 460 590 710 500 C940 418 1085 452 1280 370 L1280 640 L0 640 Z" fill="#4ade80" opacity="0.035"/>
+
+  <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <g transform="translate(68 62)">
+      <rect width="52" height="52" rx="15" fill="#69f0a4"/>
+      <path d="M16 31 L23 24 L29 29 L39 18" fill="none" stroke="#0a1c14" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="39" cy="18" r="3.5" fill="#0a1c14"/>
+      <text x="70" y="20" fill="#93f5bc" font-size="16" font-weight="750" letter-spacing="2.2">OPEN SOURCE · AZ + EN</text>
+      <text x="70" y="47" fill="#d5e7dd" font-size="15" font-weight="520" letter-spacing="0.8">TOOL-GROUNDED FINANCIAL AI</text>
+    </g>
+
+    <g transform="translate(68 174)">
+      <text fill="#ffffff" font-size="61" font-weight="780" letter-spacing="-2.2">
+        <tspan x="0" y="0">Governed Investment</tspan>
+        <tspan x="0" y="72">Assistant</tspan>
+      </text>
+      <text x="2" y="132" fill="#b9cfc3" font-size="22" font-weight="450">
+        Portfolio analytics, governed RAG, signed evidence,
+      </text>
+      <text x="2" y="166" fill="#b9cfc3" font-size="22" font-weight="450">
+        deterministic calculations, traces, tokens, and model cost.
+      </text>
+    </g>
+
+    <g transform="translate(68 420)" font-size="16" font-weight="650">
+      <g>
+        <rect width="170" height="43" rx="21.5" fill="#ffffff" opacity="0.09" stroke="#c7f9da" stroke-opacity="0.18"/>
+        <text x="22" y="27" fill="#e6f6ed">Portfolio analytics</text>
+      </g>
+      <g transform="translate(184)">
+        <rect width="153" height="43" rx="21.5" fill="#ffffff" opacity="0.09" stroke="#c7f9da" stroke-opacity="0.18"/>
+        <text x="22" y="27" fill="#e6f6ed">Signed evidence</text>
+      </g>
+      <g transform="translate(351)">
+        <rect width="168" height="43" rx="21.5" fill="#ffffff" opacity="0.09" stroke="#c7f9da" stroke-opacity="0.18"/>
+        <text x="22" y="27" fill="#e6f6ed">Mastra + OpenAI</text>
+      </g>
+    </g>
+
+    <g transform="translate(790 104)" filter="url(#shadow)">
+      <rect width="420" height="402" rx="28" fill="#f4fbf7"/>
+      <text x="34" y="52" fill="#10251d" font-size="17" font-weight="760" letter-spacing="1.5">GOVERNED RESPONSE PATH</text>
+      <line x1="70" y1="102" x2="70" y2="332" stroke="#aad7bd" stroke-width="3"/>
+
+      <g font-size="18" font-weight="700">
+        <g transform="translate(38 79)">
+          <circle cx="32" cy="25" r="24" fill="#d9f8e6"/>
+          <text x="22" y="31" fill="#126235">01</text>
+          <text x="82" y="21" fill="#11241c">User question</text>
+          <text x="82" y="43" fill="#60796b" font-size="14" font-weight="500">Azerbaijani or English</text>
+        </g>
+        <g transform="translate(38 143)">
+          <circle cx="32" cy="25" r="24" fill="#c8f2d9"/>
+          <text x="22" y="31" fill="#126235">02</text>
+          <text x="82" y="21" fill="#11241c">Policy + one-use grant</text>
+          <text x="82" y="43" fill="#60796b" font-size="14" font-weight="500">Server-owned authorization</text>
+        </g>
+        <g transform="translate(38 207)">
+          <circle cx="32" cy="25" r="24" fill="#b4ebcb"/>
+          <text x="22" y="31" fill="#126235">03</text>
+          <text x="82" y="21" fill="#11241c">Typed boundary tools</text>
+          <text x="82" y="43" fill="#60796b" font-size="14" font-weight="500">Synthetic defaults, replaceable ports</text>
+        </g>
+        <g transform="translate(38 271)">
+          <circle cx="32" cy="25" r="24" fill="#9ee3bb"/>
+          <text x="22" y="31" fill="#126235">04</text>
+          <text x="82" y="21" fill="#11241c">Signed facts + citations</text>
+          <text x="82" y="43" fill="#60796b" font-size="14" font-weight="500">Deterministic financial values</text>
+        </g>
+        <g transform="translate(38 335)">
+          <circle cx="32" cy="25" r="24" fill="#69f0a4"/>
+          <path d="M22 25 L29 32 L42 18" fill="none" stroke="#103923" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="82" y="21" fill="#11241c">Validated answer</text>
+          <text x="82" y="43" fill="#60796b" font-size="14" font-weight="500">Read-only, traced, and scored</text>
+        </g>
+      </g>
+    </g>
+
+    <text x="68" y="566" fill="#8cb3a0" font-size="16" font-weight="560" letter-spacing="0.7">
+      OFFLINE SYNTHETIC DEMO · READ-ONLY · APACHE-2.0
+    </text>
+  </g>
+</svg>
