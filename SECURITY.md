@@ -78,6 +78,21 @@ General feature requests, incorrect market data from an upstream development
 feed, and financial-answer quality issues without a security impact belong in a
 normal issue.
 
+## Runtime dependency advisory
+
+Mastra's multi-version AI SDK compatibility layer currently installs
+`@ai-sdk/provider-utils` 3.0.30 under an npm alias. GitHub advisory
+`GHSA-866g-f22w-33x8` describes low-severity uncontrolled resource consumption
+in JSON response handling for versions through 3.0.97, and lists no patched
+version as of 2026-08-11. The application's direct OpenAI adapter uses the
+separate 5.x provider-utils line, but the older Mastra compatibility alias
+remains in the production dependency graph.
+
+The release gate reports this advisory and fails on moderate or higher runtime
+findings. Maintainers should keep provider responses bounded, avoid enabling
+unreviewed legacy provider adapters, track the upstream advisory, and upgrade
+the compatibility dependency as soon as a patched Mastra release is available.
+
 ## Development-only dependency advisory
 
 The private, loopback-only Mastra Studio toolchain currently pulls
