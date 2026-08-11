@@ -29,7 +29,7 @@ function sha256(value: string): string {
 function signer(): DevHmacSigner {
   return new DevHmacSigner({
     keyId: "approved-knowledge-test-key",
-    secret: "knowledge-test-secret-0123456789abcdef"
+    secret: "knowledge-test-secret-0123456789abcdef" // gitleaks:allow -- synthetic test-only HMAC key
   });
 }
 

@@ -62,7 +62,7 @@ describe("public V3 assistant request contract", () => {
   it("opens the exact signed handoff without putting it in a URL", () => {
     const handoff = {
       handoffRef:
-        "eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoib3JkZXItaGFuZG9mZiJ9.c2lnbmF0dXJl",
+        "eyJhbGciOiJIUzI1NiJ9.eyJwdXJwb3NlIjoib3JkZXItaGFuZG9mZiJ9.c2lnbmF0dXJl", // gitleaks:allow -- synthetic unsigned JWT fixture
       payload: {
         handoffId: "00000000-0000-4000-8000-000000000001",
         intentId: "00000000-0000-4000-8000-000000000002"

@@ -26,7 +26,7 @@ import {
 function signer(): DevHmacSigner {
   return new DevHmacSigner({
     keyId: "test-portfolio-key",
-    secret: "abcdef0123456789abcdef0123456789"
+    secret: "abcdef0123456789abcdef0123456789" // gitleaks:allow -- synthetic test-only HMAC key
   });
 }
 

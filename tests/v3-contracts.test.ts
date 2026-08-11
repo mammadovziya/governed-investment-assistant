@@ -21,7 +21,7 @@ import {
 
 const signer = () => new DevHmacSigner({
   keyId: "test-hmac-key",
-  secret: "0123456789abcdef0123456789abcdef"
+  secret: "0123456789abcdef0123456789abcdef" // gitleaks:allow -- synthetic test-only HMAC key
 });
 
 function tamperBase64UrlByte(value: string): string {

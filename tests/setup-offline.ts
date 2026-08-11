@@ -4,6 +4,7 @@
 process.env.NODE_ENV = "test";
 process.env.OPENAI_API_KEY = "vitest-disabled-no-provider-access";
 process.env.ASSISTANT_DEMO_MARKET_PROVIDER = "synthetic-offline";
+process.env.MASTRA_OBSERVABILITY_SHARED = "true";
 
 const nativeFetch = globalThis.fetch.bind(globalThis);
 

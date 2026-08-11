@@ -1,0 +1,8 @@
+44f047d84f67067819243c92bcb9f020140c61d6:src/assistant-v3/boundary-tools.ts:generic-api-key:77
+44f047d84f67067819243c92bcb9f020140c61d6:tests/public-v3-api.test.ts:jwt:65
+44f047d84f67067819243c92bcb9f020140c61d6:tests/v3-contracts.test.ts:generic-api-key:24
+44f047d84f67067819243c92bcb9f020140c61d6:tests/v3-http.test.ts:jwt:68
+44f047d84f67067819243c92bcb9f020140c61d6:tests/v3-portfolio-analytics.test.ts:generic-api-key:29
+44f047d84f67067819243c92bcb9f020140c61d6:tests/v3-telemetry.test.ts:generic-api-key:367
+44f047d84f67067819243c92bcb9f020140c61d6:tests/v3-approved-knowledge.test.ts:generic-api-key:32
+44f047d84f67067819243c92bcb9f020140c61d6:tests/v3-boundary-tools.test.ts:generic-api-key:278

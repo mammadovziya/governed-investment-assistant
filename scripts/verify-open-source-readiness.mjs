@@ -20,6 +20,7 @@ const requiredFiles = [
   "SUPPORT.md",
   ".editorconfig",
   ".gitattributes",
+  ".gitleaksignore",
   ".nvmrc",
   ".env.example",
   ".github/PULL_REQUEST_TEMPLATE.md",

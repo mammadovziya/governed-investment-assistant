@@ -51,3 +51,9 @@ updates:
     rebase-strategy: auto
     commit-message:
       prefix: docker
+    ignore:
+      # Node 22 is the project's declared and tested runtime baseline. Review
+      # runtime-major migrations deliberately instead of opening automatic PRs.
+      - dependency-name: node
+        update-types:
+          - version-update:semver-major

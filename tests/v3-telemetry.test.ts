@@ -364,7 +364,7 @@ describe("V3 structured telemetry privacy", () => {
       query: "Should I buy ten NVDA shares?",
       message: "My private portfolio is worth 10036 dollars",
       authorization: "Bearer super-private-auth-token",
-      token: "sk_private_abcdefghijk123456",
+      token: "sk_private_abcdefghijk123456", // gitleaks:allow -- synthetic redaction fixture
       email: "person.private@example.com",
       callbackUrl: "https://private.example/callback?client=7182",
       cardNumber: "4111111111111111",

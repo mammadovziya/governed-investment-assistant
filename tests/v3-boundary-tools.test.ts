@@ -275,7 +275,7 @@ function financialEducationResult(
 function signer(): DevHmacSigner {
   return new DevHmacSigner({
     keyId: "v3-boundary-test-key",
-    secret: "v3-boundary-test-secret-0123456789abcdef"
+    secret: "v3-boundary-test-secret-0123456789abcdef" // gitleaks:allow -- synthetic test-only HMAC key
   });
 }
 

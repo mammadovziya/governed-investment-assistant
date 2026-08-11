@@ -74,7 +74,7 @@ import type { PublicMarketResearchPort } from "./providers.js";
 import type { V3TrustedSession } from "./sessions.js";
 import type { DevHmacSigner } from "./signing.js";
 
-export const V3_BOUNDARY_EXECUTION_CONTEXT_KEY = "v3BoundaryExecution" as const;
+export const V3_BOUNDARY_EXECUTION_CONTEXT_KEY = "v3BoundaryExecution" as const; // gitleaks:allow -- public protocol key, not a credential
 export const V3_BOUNDARY_TOOL_VERSION = "3.0.0" as const;
 
 export interface V3BoundaryExecutionContext {
